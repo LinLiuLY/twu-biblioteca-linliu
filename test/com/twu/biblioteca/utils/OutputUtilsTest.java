@@ -2,7 +2,6 @@ package com.twu.biblioteca.utils;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -32,6 +31,6 @@ public class OutputUtilsTest {
     @Test
     public void outputMessageTest() {
         OutPutUtils.outputMessage("welcome");
-        assertEquals("welcome", outContent.toString());
+        assertEquals("should print welcome", "welcome", outContent.toString());
     }
 }
