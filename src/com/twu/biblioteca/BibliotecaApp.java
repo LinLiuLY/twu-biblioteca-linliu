@@ -1,8 +1,9 @@
 package com.twu.biblioteca;
 
-public class BibliotecaApp {
+import com.twu.biblioteca.utils.OutPutUtils;
 
+public class BibliotecaApp {
     public static void main(String[] args) {
-        System.out.println("Hello, world!");
+        OutPutUtils.outputMessage("Welcome");
     }
 }
