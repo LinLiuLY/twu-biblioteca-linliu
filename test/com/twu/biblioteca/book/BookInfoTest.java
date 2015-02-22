@@ -29,4 +29,17 @@ public class BookInfoTest {
     public void isBookCheckedOutTest() {
         assertFalse("book is not checked out", new BookInfo().isBookCheckedOut("HeadFirstJava"));
     }
+
+    @Test
+    public void isBookBelongsToLibraryTest() {
+        assertTrue("book belongs to the library", new BookInfo().isBookBelongsToLibrary("HeadFirstJavaScript"));
+        assertFalse("book does not belong to the library", new BookInfo().isBookBelongsToLibrary("CSS"));
+    }
+
+    @Test
+    public void isBookAvailableToCheckout() {
+        assertTrue("book is available",new BookInfo().isBookAvailableToCheckout("HeadFirstHtml"));
+        assertFalse("book is unavailable", new BookInfo().isBookAvailableToCheckout("CSS"));
+    }
+
 }

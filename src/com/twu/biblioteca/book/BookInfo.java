@@ -40,4 +40,11 @@ public class BookInfo {
         return true;
     }
 
+    public boolean isBookBelongsToLibrary(String bookName) {
+        return getBookNames().contains(bookName);
+    }
+
+    public boolean isBookAvailableToCheckout(String bookName) {
+        return isBookBelongsToLibrary(bookName)&&(!isBookCheckedOut(bookName));
+    }
 }
