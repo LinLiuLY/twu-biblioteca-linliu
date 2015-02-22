@@ -13,7 +13,7 @@ public class PropertiesUtilsTest {
         assertEquals("The key in the properties is exist.", "HeadFirstJava", PropertiesUtils.getBookProperty("HeadFirstJava.bookName"));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getBookProperty_KeyIsNotExistAs1stParam() {
         assertNull("The key in the properties is not exist.", PropertiesUtils.getBookProperty("HeadFirstCSS.bookName"));
     }
