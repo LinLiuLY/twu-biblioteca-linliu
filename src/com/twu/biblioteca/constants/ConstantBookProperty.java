@@ -1,6 +1,5 @@
 package com.twu.biblioteca.constants;
 
-
 public class ConstantBookProperty {
 
     public static final String NAME = "bookName";

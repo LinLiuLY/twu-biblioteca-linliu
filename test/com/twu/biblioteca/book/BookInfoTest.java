@@ -8,9 +8,6 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by linliu on 2/21/15.
- */
 public class BookInfoTest {
     @Test
     public void getBooksInfoTest() {

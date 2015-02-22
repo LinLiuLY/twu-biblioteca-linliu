@@ -12,7 +12,7 @@ public class BookInfo {
     public List<Book> getBooksInfo() {
         List<Book> bookList = new ArrayList<Book>();
         for (String bookName : getBookNames()) {
-            Book book = new Book(bookName,getBookAuthorByBookName(bookName),getBookPublishedYearByBookName(bookName));
+            Book book = new Book(bookName, getBookAuthorByBookName(bookName), getBookPublishedYearByBookName(bookName));
             bookList.add(book);
         }
         return bookList;
