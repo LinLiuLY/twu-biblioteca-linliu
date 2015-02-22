@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class BookInfoTest {
@@ -22,5 +23,10 @@ public class BookInfoTest {
     @Test
     public void getBookNamesTest() {
         assertEquals("should return book name list.", Arrays.asList("HeadFirstJava", "HeadFirstJavaScript", "HeadFirstHtml"), new BookInfo().getBookNames());
+    }
+
+    @Test
+    public void isBookCheckedOutTest() {
+        assertFalse("book is not checked out", new BookInfo().isBookCheckedOut("HeadFirstJava"));
     }
 }

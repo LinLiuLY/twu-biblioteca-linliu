@@ -12,8 +12,10 @@ public class BookInfo {
     public List<Book> getBooksInfo() {
         List<Book> bookList = new ArrayList<Book>();
         for (String bookName : getBookNames()) {
-            Book book = new Book(bookName, getBookAuthorByBookName(bookName), getBookPublishedYearByBookName(bookName));
-            bookList.add(book);
+            if(!isBookCheckedOut(bookName)){
+                Book book = new Book(bookName, getBookAuthorByBookName(bookName), getBookPublishedYearByBookName(bookName));
+                bookList.add(book);
+            }
         }
         return bookList;
     }
@@ -29,4 +31,13 @@ public class BookInfo {
     public String getBookPublishedYearByBookName(String bookName) {
         return PropertiesUtils.getBookProperty(bookName + "." + ConstantBookProperty.YEAR);
     }
+
+    public boolean isBookCheckedOut(String bookName) {
+        String bookStatus = PropertiesUtils.getBookProperty(bookName + "." + ConstantBookProperty.STATUS);
+        if (bookStatus.equals("0")){
+            return false;
+        }
+        return true;
+    }
+
 }
