@@ -9,6 +9,8 @@ public class MainMenuCtl {
     public void showMainMenu() {
         OutputUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);
         OutputUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_BOOKS);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_CHECK_OUT_BOOK);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_RETURN_BOOKS);
         OutputUtils.outputMessage(ConstantOutputMessage.OPTION_QUIT);
     }
 
@@ -30,5 +32,7 @@ public class MainMenuCtl {
     public void exitMainMenu() {
         System.exit(0);
     }
+
+
 
 }
