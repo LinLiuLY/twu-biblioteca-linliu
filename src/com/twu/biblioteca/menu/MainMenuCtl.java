@@ -35,9 +35,9 @@ public class MainMenuCtl {
         if (option.equals("1")) {
             showBookList();
         } else if (option.equals("2")) {
-            checkoutBookMenu();
+            new BookMenuCtl().checkoutBookMenu();
         } else if (option.equals("3")) {
-            returnBookMenu();
+            new BookMenuCtl().returnBookMenu();
         } else if (option.equals("0")) {
             exitMainMenu();
         } else {
@@ -48,25 +48,4 @@ public class MainMenuCtl {
     public void exitMainMenu() {
         System.exit(0);
     }
-
-    public void checkoutBookMenu() {
-        OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        while (!input.equalsIgnoreCase("exit")) {
-            BookMenuCtl.checkoutBook(input);
-            input = sc.nextLine();
-        }
-    }
-
-    public void returnBookMenu() {
-        OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        while (!input.equalsIgnoreCase("exit")) {
-            BookMenuCtl.returnBook(input);
-            input = sc.nextLine();
-        }
-    }
-
 }
