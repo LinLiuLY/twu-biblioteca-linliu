@@ -6,6 +6,7 @@ public class ConstantOutputMessage {
 
     public static final String OPTION_QUIT = "0: Quit";
     public static final String OPTION_LIST_BOOKS = "1: List Books";
+    public static final String OPTION_LIST_MOVIES = "2: List Movies";
 
     public static final String OPTION_INVALID = "Select a valid option!";
     public static final String MAIN_MENU = "Main Menu";

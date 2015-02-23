@@ -24,6 +24,10 @@ public class ProductInfo {
         return PropertiesUtils.getProductProperty(productName + "." + ConstantProductProperty.YEAR);
     }
 
+    public String getMovieRatingByMovieName(String movieName) {
+        return PropertiesUtils.getProductProperty(movieName + "." + ConstantProductProperty.RATING);
+    }
+
     public boolean isProductCheckedOut(String productName) {
         String productStatus = PropertiesUtils.getProductProperty(productName + "." + ConstantProductProperty.STATUS);
         if (productStatus.equals("0")) {

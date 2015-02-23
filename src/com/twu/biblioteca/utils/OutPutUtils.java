@@ -11,9 +11,21 @@ public class OutputUtils {
     }
 
     public static void outPutBooksInfo(List<String> bookNames) {
-        ProductInfo productInfo = new ProductInfo();
-        for (String bookName : bookNames)
-            System.out.printf("%s %s %s\n", bookName, productInfo.getProductAuthorByProductName(bookName), productInfo.getProductPublishedYearByProductName(bookName));
+        for (String bookName : bookNames) {
+            ProductInfo productInfo = new ProductInfo();
+            if (!productInfo.isProductCheckedOut(bookName)) {
+                System.out.printf("%s %s %s\n", bookName, productInfo.getProductAuthorByProductName(bookName), productInfo.getProductPublishedYearByProductName(bookName));
+            }
+        }
+    }
+
+    public static void outPutMoviesInfo(List<String> movieNames) {
+        for (String movieName : movieNames) {
+            ProductInfo productInfo = new ProductInfo();
+            if (!productInfo.isProductCheckedOut(movieName)) {
+                System.out.printf("%s %s %s %s\n", movieName, productInfo.getProductAuthorByProductName(movieName), productInfo.getProductPublishedYearByProductName(movieName), productInfo.getMovieRatingByMovieName(movieName));
+            }
+        }
     }
 
 }
