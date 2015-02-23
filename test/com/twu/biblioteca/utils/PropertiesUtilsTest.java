@@ -28,5 +28,4 @@ public class PropertiesUtilsTest {
         PropertiesUtils.setBookProperty("HeadFirstJava.status","1");
         assertEquals("The key in the properties is exist.", "1", PropertiesUtils.getBookProperty("HeadFirstJava.status"));
     }
-
 }
