@@ -25,19 +25,19 @@ public class BookInfoTest {
 
     @Test
     public void isBookCheckedOutTest() {
-        assertFalse("book is not checked out", new BookInfo().isBookCheckedOut("HeadFirstJava"));
+        assertFalse("book is not checked out", new BookInfo().isProductCheckedOut("HeadFirstJava"));
     }
 
     @Test
     public void isBookBelongsToLibraryTest() {
-        assertTrue("book belongs to the library", new BookInfo().isBookBelongsToLibrary("HeadFirstJavaScript"));
-        assertFalse("book does not belong to the library", new BookInfo().isBookBelongsToLibrary("CSS"));
+        assertTrue("book belongs to the library", new BookInfo().isProductBelongsToLibrary("book", "HeadFirstJavaScript"));
+        assertFalse("book does not belong to the library", new BookInfo().isProductBelongsToLibrary("book", "CSS"));
     }
 
     @Test
     public void isBookAvailableToCheckout() {
-        assertTrue("book is available", new BookInfo().isBookAvailableToCheckout("HeadFirstHtml"));
-        assertFalse("book is unavailable", new BookInfo().isBookAvailableToCheckout("CSS"));
+        assertTrue("book is available", new BookInfo().isProductAvailableToCheckout("book", "HeadFirstHtml"));
+        assertFalse("book is unavailable", new BookInfo().isProductAvailableToCheckout("book", "CSS"));
     }
 
 }

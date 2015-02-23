@@ -1,6 +1,8 @@
 package com.twu.biblioteca.book;
 
-public class Book {
+import com.twu.biblioteca.product.Product;
+
+public class Book extends Product {
     String bookName;
     String bookAuthor;
     String yearPublished;

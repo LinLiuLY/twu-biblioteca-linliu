@@ -1,6 +1,6 @@
 package com.twu.biblioteca.book;
 
-import com.twu.biblioteca.constants.ConstantBookProperty;
+import com.twu.biblioteca.constants.ConstantProductProperty;
 import com.twu.biblioteca.utils.PropertiesUtils;
 
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ public class BookInfo {
     public List<Book> getBooksInfo() {
         List<Book> bookList = new ArrayList<Book>();
         for (String bookName : getBookNames()) {
-            if (!isBookCheckedOut(bookName)) {
-                Book book = new Book(bookName, getBookAuthorByBookName(bookName), getBookPublishedYearByBookName(bookName));
+            if (!isProductCheckedOut(bookName)) {
+                Book book = new Book(bookName, getProductAuthorByProductName(bookName), getProductPublishedYearByProductName(bookName));
                 bookList.add(book);
             }
         }
@@ -21,34 +21,41 @@ public class BookInfo {
     }
 
     public List<String> getBookNames() {
-        return Arrays.asList(ConstantBookProperty.JAVA, ConstantBookProperty.JAVASCRIPT, ConstantBookProperty.HTML);
+        return Arrays.asList(ConstantProductProperty.JAVA, ConstantProductProperty.JAVASCRIPT, ConstantProductProperty.HTML);
     }
 
-    public String getBookAuthorByBookName(String bookName) {
-        return PropertiesUtils.getBookProperty(bookName + "." + ConstantBookProperty.AUTHOR);
+    public List<String> getMovieNames() {
+        return Arrays.asList(ConstantProductProperty.MOVIE_ONE, ConstantProductProperty.MOVIE_TWO);
     }
 
-    public String getBookPublishedYearByBookName(String bookName) {
-        return PropertiesUtils.getBookProperty(bookName + "." + ConstantBookProperty.YEAR);
+    public String getProductAuthorByProductName(String productName) {
+        return PropertiesUtils.getProductProperty(productName + "." + ConstantProductProperty.AUTHOR);
     }
 
-    public boolean isBookCheckedOut(String bookName) {
-        String bookStatus = PropertiesUtils.getBookProperty(bookName + "." + ConstantBookProperty.STATUS);
-        if (bookStatus.equals("0")) {
+    public String getProductPublishedYearByProductName(String productName) {
+        return PropertiesUtils.getProductProperty(productName + "." + ConstantProductProperty.YEAR);
+    }
+
+    public boolean isProductCheckedOut(String productName) {
+        String productStatus = PropertiesUtils.getProductProperty(productName + "." + ConstantProductProperty.STATUS);
+        if (productStatus.equals("0")) {
             return false;
         }
         return true;
     }
 
-    public boolean isBookBelongsToLibrary(String bookName) {
-        return getBookNames().contains(bookName);
+    public boolean isProductBelongsToLibrary(String productType, String productName) {
+        if (productType.equals(ConstantProductProperty.BOOK_TYPE)) {
+            return getBookNames().contains(productName);
+        }
+        return getMovieNames().contains(productName);
     }
 
-    public boolean isBookAvailableToCheckout(String bookName) {
-        return isBookBelongsToLibrary(bookName) && (!isBookCheckedOut(bookName));
+    public boolean isProductAvailableToCheckout(String productType, String productName) {
+        return isProductBelongsToLibrary(productType, productName) && (!isProductCheckedOut(productName));
     }
 
-    public void setBookStatus(String bookName, String status) {
-        PropertiesUtils.setBookProperty(bookName + "." + ConstantBookProperty.STATUS, status);
+    public void setProductStatus(String productName, String status) {
+        PropertiesUtils.setProductProperty(productName + "." + ConstantProductProperty.STATUS, status);
     }
 }

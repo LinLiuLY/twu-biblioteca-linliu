@@ -8,7 +8,7 @@ import java.util.Properties;
 public class PropertiesUtils {
     public static final Properties prop = new Properties();
 
-    public static String getBookProperty(String propertyKey) {
+    public static String getProductProperty(String propertyKey) {
         InputStream input = null;
         String value = "";
         try {
@@ -37,7 +37,7 @@ public class PropertiesUtils {
         return value;
     }
 
-    public static void setBookProperty(String propertyKey, String propertyValue) {
+    public static void setProductProperty(String propertyKey, String propertyValue) {
         OutputStream output = null;
         try {
             output = new FileOutputStream(ConstantFileName.BOOKS_INFORMATION);
