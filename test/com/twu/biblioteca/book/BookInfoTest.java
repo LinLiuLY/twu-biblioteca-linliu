@@ -5,9 +5,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class BookInfoTest {
     @Test
@@ -38,7 +36,7 @@ public class BookInfoTest {
 
     @Test
     public void isBookAvailableToCheckout() {
-        assertTrue("book is available",new BookInfo().isBookAvailableToCheckout("HeadFirstHtml"));
+        assertTrue("book is available", new BookInfo().isBookAvailableToCheckout("HeadFirstHtml"));
         assertFalse("book is unavailable", new BookInfo().isBookAvailableToCheckout("CSS"));
     }
 

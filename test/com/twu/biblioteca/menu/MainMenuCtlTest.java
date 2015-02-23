@@ -9,7 +9,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertTrue;
 
-public class MenuCtlTest {
+public class MainMenuCtlTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
@@ -27,15 +27,15 @@ public class MenuCtlTest {
 
     @Test
     public void chooseOption_oneAsParam() {
-        MenuCtl menuCtl = new MenuCtl();
-        menuCtl.chooseOption("1");
+        MainMenuCtl mainMenuCtl = new MainMenuCtl();
+        mainMenuCtl.chooseOption("1");
         assertTrue("should print book info", outContent.toString().contains("HeadFirstJava"));
     }
 
     @Test
     public void chooseOption_invalidParam() {
-        MenuCtl menuCtl = new MenuCtl();
-        menuCtl.chooseOption("e");
+        MainMenuCtl mainMenuCtl = new MainMenuCtl();
+        mainMenuCtl.chooseOption("e");
         assertTrue("should print error message", outContent.toString().contains("valid option"));
     }
 }

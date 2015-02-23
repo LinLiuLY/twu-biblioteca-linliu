@@ -2,18 +2,17 @@ package com.twu.biblioteca.utils;
 
 import com.twu.biblioteca.constants.ConstantFileName;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
 public class PropertiesUtils {
+    public static final Properties prop = new Properties();
 
     public static String getBookProperty(String propertyKey) {
-        Properties prop = new Properties();
         InputStream input = null;
         String value = "";
         try {
-            input = PropertiesUtils.class.getClassLoader().getResourceAsStream(ConstantFileName.BOOKS_INFORMATION);
+            input = new FileInputStream(ConstantFileName.BOOKS_INFORMATION);
             if (input == null) {
                 System.out.println("Sorry, unable to find the file " + ConstantFileName.BOOKS_INFORMATION);
                 return null;
@@ -37,5 +36,23 @@ public class PropertiesUtils {
         }
         return value;
     }
-}
 
+    public static void setBookProperty(String propertyKey,String propertyValue) {
+        OutputStream output = null;
+        try {
+            output = new FileOutputStream(ConstantFileName.BOOKS_INFORMATION);
+            prop.setProperty(propertyKey, propertyValue);
+            prop.store(output,null);
+        } catch (IOException io) {
+            io.printStackTrace();
+        } finally {
+            if (output != null) {
+                try {
+                    output.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}

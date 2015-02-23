@@ -4,7 +4,7 @@ import com.twu.biblioteca.book.BookInfo;
 import com.twu.biblioteca.constants.ConstantOutputMessage;
 import com.twu.biblioteca.utils.OutputUtils;
 
-public class MenuCtl {
+public class MainMenuCtl {
 
     public void showMainMenu() {
         OutputUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);

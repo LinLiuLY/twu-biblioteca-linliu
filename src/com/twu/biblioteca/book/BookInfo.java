@@ -12,7 +12,7 @@ public class BookInfo {
     public List<Book> getBooksInfo() {
         List<Book> bookList = new ArrayList<Book>();
         for (String bookName : getBookNames()) {
-            if(!isBookCheckedOut(bookName)){
+            if (!isBookCheckedOut(bookName)) {
                 Book book = new Book(bookName, getBookAuthorByBookName(bookName), getBookPublishedYearByBookName(bookName));
                 bookList.add(book);
             }
@@ -34,7 +34,7 @@ public class BookInfo {
 
     public boolean isBookCheckedOut(String bookName) {
         String bookStatus = PropertiesUtils.getBookProperty(bookName + "." + ConstantBookProperty.STATUS);
-        if (bookStatus.equals("0")){
+        if (bookStatus.equals("0")) {
             return false;
         }
         return true;
@@ -45,6 +45,8 @@ public class BookInfo {
     }
 
     public boolean isBookAvailableToCheckout(String bookName) {
-        return isBookBelongsToLibrary(bookName)&&(!isBookCheckedOut(bookName));
+        return isBookBelongsToLibrary(bookName) && (!isBookCheckedOut(bookName));
     }
+
+
 }
