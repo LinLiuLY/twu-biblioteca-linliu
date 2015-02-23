@@ -5,7 +5,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BookInfoTest {
     @Test
@@ -20,24 +21,7 @@ public class BookInfoTest {
 
     @Test
     public void getBookNamesTest() {
-        assertEquals("should return book name list.", Arrays.asList("HeadFirstJava", "HeadFirstJavaScript", "HeadFirstHtml"), new BookInfo().getBookNames());
-    }
-
-    @Test
-    public void isBookCheckedOutTest() {
-        assertFalse("book is not checked out", new BookInfo().isProductCheckedOut("HeadFirstJava"));
-    }
-
-    @Test
-    public void isBookBelongsToLibraryTest() {
-        assertTrue("book belongs to the library", new BookInfo().isProductBelongsToLibrary("book", "HeadFirstJavaScript"));
-        assertFalse("book does not belong to the library", new BookInfo().isProductBelongsToLibrary("book", "CSS"));
-    }
-
-    @Test
-    public void isBookAvailableToCheckout() {
-        assertTrue("book is available", new BookInfo().isProductAvailableToCheckout("book", "HeadFirstHtml"));
-        assertFalse("book is unavailable", new BookInfo().isProductAvailableToCheckout("book", "CSS"));
+        assertEquals("should return book name list.", Arrays.asList("HeadFirstJava", "HeadFirstJavaScript", "HeadFirstHtml"), BookInfo.getBookNames());
     }
 
 }
