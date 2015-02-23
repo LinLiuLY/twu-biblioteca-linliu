@@ -4,7 +4,7 @@ import com.twu.biblioteca.product.ProductInfo;
 
 import java.util.List;
 
-public class OutputUtils {
+public class OutPutUtils {
 
     public static void outputMessage(String message) {
         System.out.println(message);

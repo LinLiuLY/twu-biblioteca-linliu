@@ -1,8 +1,7 @@
 package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.constants.ConstantOutputMessage;
-import com.twu.biblioteca.product.ProductInfo;
-import com.twu.biblioteca.utils.OutputUtils;
+import com.twu.biblioteca.utils.OutPutUtils;
 
 import java.util.Scanner;
 
@@ -19,21 +18,19 @@ public class MainMenuCtl {
     }
 
     public static void showMainMenu() {
-        OutputUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);
-        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_BOOKS);
-        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_MOVIES);
-        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_QUIT);
+        OutPutUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);
+        OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_BOOKS);
+        OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_MOVIES);
+        OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_QUIT);
     }
 
     public static void chooseOption(String option) {
-        if (option.equals("1")) {
-            BookMenuCtl.bookMenu();
-        } else if(option.equals("2")){
-            OutputUtils.outPutMoviesInfo(new ProductInfo().getMovieNames());
+        if (option.equals("1") || option.equals("2")) {
+            ProductMenuCtl.productMenu(option);
         } else if (option.equals("0")) {
             exitMainMenu();
         } else {
-            OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
+            OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
         }
     }
 
