@@ -6,20 +6,20 @@ import com.twu.biblioteca.utils.OutputUtils;
 
 public class BookMenuCtl {
 
-    public void checkoutBook(String bookName) {
+    public static void checkoutBook(String bookName) {
         BookInfo bookInfo = new BookInfo();
-        if(bookInfo.isBookAvailableToCheckout(bookName)){
-            bookInfo.setBookStatus(bookName,"1");
+        if (bookInfo.isBookAvailableToCheckout(bookName)) {
+            bookInfo.setBookStatus(bookName, "1");
             OutputUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_CHECKOUT);
         } else {
             OutputUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_CHECKOUT);
         }
     }
 
-    public void returnBook(String bookName) {
+    public static void returnBook(String bookName) {
         BookInfo bookInfo = new BookInfo();
-        if(bookInfo.isBookBelongsToLibrary(bookName)) {
-            bookInfo.setBookStatus(bookName,"0");
+        if (bookInfo.isBookBelongsToLibrary(bookName)) {
+            bookInfo.setBookStatus(bookName, "0");
             OutputUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_RETURN);
         } else {
             OutputUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_RETURN);

@@ -8,18 +8,8 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
-
         OutputUtils.outputMessage(ConstantOutputMessage.WELCOME);
-
         MainMenuCtl mainMenuCtl = new MainMenuCtl();
-        mainMenuCtl.showMainMenu();
-
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        while (!input.equalsIgnoreCase("exit")) {
-            mainMenuCtl.chooseOption(input);
-            input = sc.nextLine();
-        }
-
+        mainMenuCtl.mainMenu();
     }
 }

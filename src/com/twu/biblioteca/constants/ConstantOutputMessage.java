@@ -11,6 +11,8 @@ public class ConstantOutputMessage {
     public static final String OPTION_INVALID = "Select a valid option!";
     public static final String MAIN_MENU = "Main Menu";
 
+    public static final String PLEASE_ENTER_BOOK_NAME = "Please enter the book name:";
+
     public static final String SUCCESSFUL_CHECKOUT = "Thank you! Enjoy the book";
     public static final String UNSUCCESSFUL_CHECKOUT = "That book is not available.";
 

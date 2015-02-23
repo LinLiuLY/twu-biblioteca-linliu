@@ -48,7 +48,7 @@ public class BookInfo {
         return isBookBelongsToLibrary(bookName) && (!isBookCheckedOut(bookName));
     }
 
-    public void setBookStatus(String bookName,String status) {
-        PropertiesUtils.setBookProperty(bookName + "." +ConstantBookProperty.STATUS,status);
+    public void setBookStatus(String bookName, String status) {
+        PropertiesUtils.setBookProperty(bookName + "." + ConstantBookProperty.STATUS, status);
     }
 }

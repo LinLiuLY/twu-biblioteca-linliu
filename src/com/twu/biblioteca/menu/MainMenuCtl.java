@@ -4,7 +4,19 @@ import com.twu.biblioteca.book.BookInfo;
 import com.twu.biblioteca.constants.ConstantOutputMessage;
 import com.twu.biblioteca.utils.OutputUtils;
 
+import java.util.Scanner;
+
 public class MainMenuCtl {
+
+   public void mainMenu() {
+       showMainMenu();
+       Scanner sc = new Scanner(System.in);
+       String input = sc.nextLine();
+       while (!input.equalsIgnoreCase("exit")) {
+           chooseOption(input);
+           input = sc.nextLine();
+       }
+   }
 
     public void showMainMenu() {
         OutputUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);
@@ -22,6 +34,10 @@ public class MainMenuCtl {
     public void chooseOption(String option) {
         if (option.equals("1")) {
             showBookList();
+        } else if (option.equals("2")) {
+            checkoutBookMenu();
+        } else if (option.equals("3")) {
+            returnBookMenu();
         } else if (option.equals("0")) {
             exitMainMenu();
         } else {
@@ -33,6 +49,24 @@ public class MainMenuCtl {
         System.exit(0);
     }
 
+    public void checkoutBookMenu() {
+        OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        while (!input.equalsIgnoreCase("exit")) {
+            BookMenuCtl.checkoutBook(input);
+            input = sc.nextLine();
+        }
+    }
 
+    public void returnBookMenu() {
+        OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        while (!input.equalsIgnoreCase("exit")) {
+            BookMenuCtl.returnBook(input);
+            input = sc.nextLine();
+        }
+    }
 
 }

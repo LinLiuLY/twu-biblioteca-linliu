@@ -37,12 +37,12 @@ public class PropertiesUtils {
         return value;
     }
 
-    public static void setBookProperty(String propertyKey,String propertyValue) {
+    public static void setBookProperty(String propertyKey, String propertyValue) {
         OutputStream output = null;
         try {
             output = new FileOutputStream(ConstantFileName.BOOKS_INFORMATION);
             prop.setProperty(propertyKey, propertyValue);
-            prop.store(output,null);
+            prop.store(output, null);
         } catch (IOException io) {
             io.printStackTrace();
         } finally {

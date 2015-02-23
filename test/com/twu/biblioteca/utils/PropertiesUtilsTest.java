@@ -25,7 +25,7 @@ public class PropertiesUtilsTest {
 
     @Test
     public void setBookProperty_KeyIsExistAsParam() {
-        PropertiesUtils.setBookProperty("HeadFirstJava.status","1");
+        PropertiesUtils.setBookProperty("HeadFirstJava.status", "1");
         assertEquals("The key in the properties is exist.", "1", PropertiesUtils.getBookProperty("HeadFirstJava.status"));
     }
 }
