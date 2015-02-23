@@ -2,8 +2,9 @@ package com.twu.biblioteca.product;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import java.util.Arrays;
+
+import static org.junit.Assert.*;
 
 public class ProductInfoTest {
     @Test
@@ -26,5 +27,10 @@ public class ProductInfoTest {
         assertFalse("book is unavailable", new ProductInfo().isProductAvailableToCheckout("book", "CSS"));
         assertTrue("movie is available", new ProductInfo().isProductAvailableToCheckout("movie", "movieTwo"));
         assertFalse("movie is unavailable", new ProductInfo().isProductAvailableToCheckout("movie", "movieThree"));
+    }
+
+    @Test
+    public void getBookNamesTest() {
+        assertEquals("should return book name list.", Arrays.asList("HeadFirstJava", "HeadFirstJavaScript", "HeadFirstHtml"), new ProductInfo().getBookNames());
     }
 }

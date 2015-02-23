@@ -1,6 +1,5 @@
 package com.twu.biblioteca.menu;
 
-import com.twu.biblioteca.book.BookInfo;
 import com.twu.biblioteca.constants.ConstantOutputMessage;
 import com.twu.biblioteca.constants.ConstantProductProperty;
 import com.twu.biblioteca.product.ProductInfo;
@@ -18,7 +17,7 @@ public class BookMenuCtl {
 
     public static void showBookList() {
         OutputUtils.outputMessage(ConstantOutputMessage.BOOK_LIST);
-        OutputUtils.outPutBooksInfo(new BookInfo().getBooksInfo());
+        OutputUtils.outPutBooksInfo(new ProductInfo().getBookNames());
     }
 
     public static void showBookMenu() {

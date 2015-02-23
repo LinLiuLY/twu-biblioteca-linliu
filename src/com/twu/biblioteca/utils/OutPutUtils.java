@@ -1,6 +1,6 @@
 package com.twu.biblioteca.utils;
 
-import com.twu.biblioteca.book.Book;
+import com.twu.biblioteca.product.ProductInfo;
 
 import java.util.List;
 
@@ -10,9 +10,10 @@ public class OutputUtils {
         System.out.println(message);
     }
 
-    public static void outPutBooksInfo(List<Book> books) {
-        for (Book book : books)
-            System.out.printf("%s %s %s\n", book.getBookName(), book.getBooksAuthor(), book.getYearPublished());
+    public static void outPutBooksInfo(List<String> bookNames) {
+        ProductInfo productInfo = new ProductInfo();
+        for (String bookName : bookNames)
+            System.out.printf("%s %s %s\n", bookName, productInfo.getProductAuthorByProductName(bookName), productInfo.getProductPublishedYearByProductName(bookName));
     }
 
 }
