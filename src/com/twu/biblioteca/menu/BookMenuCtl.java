@@ -8,27 +8,50 @@ import java.util.Scanner;
 
 public class BookMenuCtl {
 
-    public static void checkoutBookMenu() {
-        OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
+    public static void bookMenu() {
+        showBookList();
+        showBookMenu();
+        chooseBookMenuOption();
+    }
+
+    public static void showBookList() {
+        OutputUtils.outputMessage(ConstantOutputMessage.BOOK_LIST);
+        OutputUtils.outPutBooksInfo(new BookInfo().getBooksInfo());
+    }
+
+    public static void showBookMenu() {
+        OutputUtils.outputMessage(ConstantOutputMessage.BOOK_MENU);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_CHECK_OUT_BOOK);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_RETURN_BOOKS);
+    }
+
+    public static void chooseBookMenuOption() {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         while (!input.equalsIgnoreCase("exit")) {
-            checkoutBook(input);
-            input = sc.nextLine();
+            if (input.equals("1") || input.equals("2")) {
+                getInputBookName(input);
+            } else {
+                OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
+            }
         }
     }
 
-    public static void returnBookMenu() {
+    public static void getInputBookName(String option) {
         OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        while (!input.equalsIgnoreCase("exit")) {
-            returnBook(input);
-            input = sc.nextLine();
+        String bookName = sc.nextLine();
+        while (!bookName.equalsIgnoreCase("exit")) {
+            if (option.equals("1")) {
+                checkoutBook(bookName);
+            } else {
+                returnBook(bookName);
+            }
+            bookName = sc.nextLine();
         }
     }
 
-    public  static void checkoutBook(String bookName) {
+    public static void checkoutBook(String bookName) {
         BookInfo bookInfo = new BookInfo();
         if (bookInfo.isBookAvailableToCheckout(bookName)) {
             bookInfo.setBookStatus(bookName, "1");
@@ -38,7 +61,7 @@ public class BookMenuCtl {
         }
     }
 
-    public  static void returnBook(String bookName) {
+    public static void returnBook(String bookName) {
         BookInfo bookInfo = new BookInfo();
         if (bookInfo.isBookBelongsToLibrary(bookName)) {
             bookInfo.setBookStatus(bookName, "0");

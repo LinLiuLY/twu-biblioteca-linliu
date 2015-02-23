@@ -26,16 +26,8 @@ public class MainMenuCtlTest {
     }
 
     @Test
-    public void chooseOption_oneAsParam() {
-        MainMenuCtl mainMenuCtl = new MainMenuCtl();
-        mainMenuCtl.chooseOption("1");
-        assertTrue("should print book info", outContent.toString().contains("HeadFirstJava"));
-    }
-
-    @Test
     public void chooseOption_invalidParam() {
-        MainMenuCtl mainMenuCtl = new MainMenuCtl();
-        mainMenuCtl.chooseOption("e");
+        MainMenuCtl.chooseOption("e");
         assertTrue("should print error message", outContent.toString().contains("valid option"));
     }
 }
