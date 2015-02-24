@@ -1,7 +1,7 @@
 package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.constants.ConstantOutputMessage;
-import com.twu.biblioteca.utils.OutPutUtils;
+import com.twu.biblioteca.utils.OutputUtils;
 
 import java.util.Scanner;
 
@@ -18,10 +18,10 @@ public class MainMenuCtl {
     }
 
     public static void showMainMenu() {
-        OutPutUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);
-        OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_BOOKS);
-        OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_MOVIES);
-        OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_QUIT);
+        OutputUtils.outputMessage(ConstantOutputMessage.MAIN_MENU);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_BOOKS);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_LIST_MOVIES);
+        OutputUtils.outputMessage(ConstantOutputMessage.OPTION_QUIT);
     }
 
     public static void chooseOption(String option) {
@@ -30,7 +30,7 @@ public class MainMenuCtl {
         } else if (option.equals("0")) {
             exitMainMenu();
         } else {
-            OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
+            OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
         }
     }
 

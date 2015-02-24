@@ -1,5 +1,6 @@
 package com.twu.biblioteca.constants;
 
+//TODO to remove
 public class ConstantProductProperty {
 
     public static final String NAME = "name";

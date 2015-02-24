@@ -9,7 +9,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertTrue;
 
-public class OutPutUtilsTest {
+public class OutputUtilsTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
@@ -27,7 +27,7 @@ public class OutPutUtilsTest {
 
     @Test
     public void outputMessageTest() {
-        OutPutUtils.outputMessage("welcome");
+        OutputUtils.outputMessage("welcome");
         assertTrue("should print welcome", outContent.toString().contains("welcome"));
     }
 

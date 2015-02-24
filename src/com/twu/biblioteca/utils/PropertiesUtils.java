@@ -12,9 +12,9 @@ public class PropertiesUtils {
         InputStream input = null;
         String value = "";
         try {
-            input = new FileInputStream(ConstantFileName.BOOKS_INFORMATION);
+            input = new FileInputStream(ConstantFileName.PRODUCT_INFORMATION);
             if (input == null) {
-                System.out.println("Sorry, unable to find the file " + ConstantFileName.BOOKS_INFORMATION);
+                System.out.println("Sorry, unable to find the file " + ConstantFileName.PRODUCT_INFORMATION);
                 return null;
             }
             prop.load(input);
@@ -40,7 +40,7 @@ public class PropertiesUtils {
     public static void setProductProperty(String propertyKey, String propertyValue) {
         OutputStream output = null;
         try {
-            output = new FileOutputStream(ConstantFileName.BOOKS_INFORMATION);
+            output = new FileOutputStream(ConstantFileName.PRODUCT_INFORMATION);
             prop.setProperty(propertyKey, propertyValue);
             prop.store(output, null);
         } catch (IOException io) {

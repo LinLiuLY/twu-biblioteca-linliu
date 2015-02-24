@@ -3,7 +3,7 @@ package com.twu.biblioteca.menu;
 import com.twu.biblioteca.constants.ConstantOutputMessage;
 import com.twu.biblioteca.constants.ConstantProductProperty;
 import com.twu.biblioteca.product.ProductInfo;
-import com.twu.biblioteca.utils.OutPutUtils;
+import com.twu.biblioteca.utils.OutputUtils;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class ProductMenuCtl {
             } else if(option.equals("2")){
                 MovieMenuCtl.chooseMovieMenuOption(option, input);
             } else {
-                OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
+                OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
             }
         }
     }
@@ -34,7 +34,7 @@ public class ProductMenuCtl {
         } else if(option.equals("2")){
             MovieMenuCtl.showMovieMenu();
         } else {
-            OutPutUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
+            OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
         }
     }
 
@@ -49,17 +49,17 @@ public class ProductMenuCtl {
 
     public static void outputCheckoutMessage(String productType) {
         if (productType.equals(ConstantProductProperty.BOOK_TYPE)) {
-            OutPutUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_CHECKOUT);
+            OutputUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_CHECKOUT);
         } else {
-            OutPutUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_CHECKOUT_MOVIE);
+            OutputUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_CHECKOUT_MOVIE);
         }
     }
 
     public static void outputCheckoutErrorMessage(String productType) {
         if (productType.equals(ConstantProductProperty.BOOK_TYPE)) {
-            OutPutUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_CHECKOUT);
+            OutputUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_CHECKOUT);
         } else {
-            OutPutUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_CHECKOUT_MOVIE);
+            OutputUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_CHECKOUT_MOVIE);
         }
     }
 }

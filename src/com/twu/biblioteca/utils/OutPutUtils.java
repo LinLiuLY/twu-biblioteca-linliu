@@ -4,13 +4,13 @@ import com.twu.biblioteca.product.ProductInfo;
 
 import java.util.List;
 
-public class OutPutUtils {
+public class OutputUtils {
 
     public static void outputMessage(String message) {
         System.out.println(message);
     }
 
-    public static void outPutBooksInfo(List<String> bookNames) {
+    public static void outputBooksInfo(List<String> bookNames) {
         for (String bookName : bookNames) {
             ProductInfo productInfo = new ProductInfo();
             if (!productInfo.isProductCheckedOut(bookName)) {
@@ -19,7 +19,7 @@ public class OutPutUtils {
         }
     }
 
-    public static void outPutMoviesInfo(List<String> movieNames) {
+    public static void outputMoviesInfo(List<String> movieNames) {
         for (String movieName : movieNames) {
             ProductInfo productInfo = new ProductInfo();
             if (!productInfo.isProductCheckedOut(movieName)) {
