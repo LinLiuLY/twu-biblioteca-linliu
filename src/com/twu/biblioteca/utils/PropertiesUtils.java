@@ -8,13 +8,13 @@ import java.util.Properties;
 public class PropertiesUtils {
     public static final Properties prop = new Properties();
 
-    public static String getProductProperty(String propertyKey) {
+    public static String getProductProperty(String propertyKey, String path) {
         InputStream input = null;
         String value = "";
         try {
-            input = new FileInputStream(ConstantFileName.PRODUCT_INFORMATION);
+            input = new FileInputStream(path);
             if (input == null) {
-                System.out.println("Sorry, unable to find the file " + ConstantFileName.PRODUCT_INFORMATION);
+                System.out.println("Sorry, unable to find the file " + path);
                 return null;
             }
             prop.load(input);

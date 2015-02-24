@@ -11,6 +11,10 @@ public class Product {
     private String author;
     private String yearPublished;
 
+    public void print() {
+        System.out.printf("%s %s %s\n", getName(), getAuthor(), getYearPublished());
+    }
+
     public void setName(String name) {
         this.name = name;
     }

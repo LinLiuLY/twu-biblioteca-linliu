@@ -40,7 +40,7 @@ public class ProductMenuCtl {
 
     public static void checkoutProduct(String productType, String productName) {
         if (new ProductInfo().isProductAvailableToCheckout(productType, productName)) {
-            new ProductInfo().setProductStatus(productName, "1");
+            new ProductInfo().setProductStatus(productType, productName, "checkout");
             outputCheckoutMessage(productType);
         } else {
             outputCheckoutErrorMessage(productType);

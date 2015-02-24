@@ -29,6 +29,4 @@ public class ConstantOutputMessage {
 
     public static final String SUCCESSFUL_RETURN = "Thank you for returning the book.";
     public static final String UNSUCCESSFUL_RETURN = "That is not a valid book to return.";
-
-
 }

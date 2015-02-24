@@ -11,7 +11,7 @@ public class BookMenuCtl {
 
     public static void showBookMenu() {
         OutputUtils.outputMessage(ConstantOutputMessage.BOOK_LIST);
-        OutputUtils.outputBooksInfo(new ProductInfo().getBookNames());
+        OutputUtils.outputProductInfo(ConstantProductProperty.BOOK_TYPE);
         OutputUtils.outputMessage(ConstantOutputMessage.BOOK_MENU);
         OutputUtils.outputMessage(ConstantOutputMessage.OPTION_CHECK_OUT_BOOK);
         OutputUtils.outputMessage(ConstantOutputMessage.OPTION_RETURN_BOOKS);
@@ -41,7 +41,7 @@ public class BookMenuCtl {
 
     public static void returnBook(String bookName) {
         if (new ProductInfo().isProductBelongsToLibrary(ConstantProductProperty.BOOK_TYPE, bookName)) {
-            new ProductInfo().setProductStatus(bookName, "0");
+            new ProductInfo().setProductStatus(ConstantProductProperty.BOOK_TYPE, bookName, "0");
             OutputUtils.outputMessage(ConstantOutputMessage.SUCCESSFUL_RETURN);
         } else {
             OutputUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_RETURN);

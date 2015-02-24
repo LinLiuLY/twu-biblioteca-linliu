@@ -11,7 +11,7 @@ public class MovieMenuCtl {
 
     public static void showMovieMenu() {
         OutputUtils.outputMessage(ConstantOutputMessage.MOVIE_LIST);
-        OutputUtils.outputMoviesInfo(new ProductInfo().getMovieNames());
+        OutputUtils.outputProductInfo(ConstantProductProperty.MOVIE_TYPE);
         OutputUtils.outputMessage(ConstantOutputMessage.MOVIE_MENU);
         OutputUtils.outputMessage(ConstantOutputMessage.OPTION_CHECK_OUT_MOVIE);
     }
