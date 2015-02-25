@@ -10,6 +10,17 @@ public class User {
     private String libraryNumber;
     private String password;
 
+    public User() {
+    }
+
+    public User(String name, String email, String phone, String libraryNumber, String password) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.libraryNumber = libraryNumber;
+        this.password = password;
+    }
+
     public Object getName() {
         return name;
     }

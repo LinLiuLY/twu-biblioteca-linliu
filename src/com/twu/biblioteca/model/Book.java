@@ -5,4 +5,11 @@ package com.twu.biblioteca.model;
  */
 public class Book extends Product {
 
+    public Book() {
+        super();
+    }
+
+    public Book(String name, String status, String author, String yearPublished) {
+        super(name, status, author, yearPublished);
+    }
 }

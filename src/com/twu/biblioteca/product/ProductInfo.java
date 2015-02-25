@@ -14,35 +14,15 @@ public class ProductInfo {
 
     static {
         allInfo = new HashMap<String, List<? extends Product>>();
-        Book book1 = new Book();
-        book1.setName("HeadFirstJava");
-        book1.setYearPublished("1992");
-        book1.setStatus("returned");
-        book1.setAuthor("Blue");
 
-        Book book2 = new Book();
-        book2.setName("HeadFirstJavaScript");
-        book2.setYearPublished("1994");
-        book2.setStatus("returned");
-        book2.setAuthor("Black");
-
+        Book book1 = new Book("HeadFirstJava", "returned", "Blue", "1992");
+        Book book2 = new Book("HeadFirstJavaScript", "returned", "Black", "1994");
         List<Book> books = new ArrayList<Book>();
         books.add(book1);
         books.add(book2);
 
-        Movie movie1 = new Movie();
-        movie1.setName("MovieOne");
-        movie1.setYearPublished("2001");
-        movie1.setStatus("returned");
-        movie1.setAuthor("Orange");
-        movie1.setRating(3);
-
-        Movie movie2 = new Movie();
-        movie2.setName("MovieTwo");
-        movie2.setYearPublished("2010");
-        movie2.setStatus("returned");
-        movie2.setAuthor("Red");
-        movie2.setRating(3);
+        Movie movie1 = new Movie("MovieOne", "returned", "Orange", "2001", 3);
+        Movie movie2 = new Movie("MovieTwo", "returned", "Red", "2010", 3);
         List<Movie> movies = new ArrayList<Movie>();
         movies.add(movie1);
         movies.add(movie2);
