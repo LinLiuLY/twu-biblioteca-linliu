@@ -20,7 +20,7 @@ public class ProductMenuCtl {
         while (!input.equalsIgnoreCase("exit")) {
             if (option.equals("1")) {
                 BookMenuCtl.chooseBookMenuOption(option, input);
-            } else if(option.equals("2")){
+            } else if (option.equals("2")) {
                 MovieMenuCtl.chooseMovieMenuOption(option, input);
             } else {
                 OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
@@ -31,7 +31,7 @@ public class ProductMenuCtl {
     public static void showProductMenu(String option) {
         if (option.equals("1")) {
             BookMenuCtl.showBookMenu();
-        } else if(option.equals("2")){
+        } else if (option.equals("2")) {
             MovieMenuCtl.showMovieMenu();
         } else {
             OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);

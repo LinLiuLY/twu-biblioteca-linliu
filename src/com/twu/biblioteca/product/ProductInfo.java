@@ -1,12 +1,13 @@
 package com.twu.biblioteca.product;
 
-import com.twu.biblioteca.constants.ConstantProductProperty;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.model.Product;
-import com.twu.biblioteca.utils.PropertiesUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ProductInfo {
     public static final Map<String, List<? extends Product>> allInfo;

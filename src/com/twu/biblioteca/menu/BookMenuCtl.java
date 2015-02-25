@@ -20,7 +20,7 @@ public class BookMenuCtl {
     public static void chooseBookMenuOption(String option, String input) {
         if (option.equals("1") || option.equals("2")) {
             getInputBookName(input);
-        } else  {
+        } else {
             OutputUtils.outputMessage(ConstantOutputMessage.OPTION_INVALID);
         }
     }

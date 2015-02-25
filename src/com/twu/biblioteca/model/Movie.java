@@ -11,11 +11,11 @@ public class Movie extends Product {
         System.out.printf("%s %s %s %s\n", getName(), getAuthor(), getYearPublished(), getRating());
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
     public int getRating() {
         return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

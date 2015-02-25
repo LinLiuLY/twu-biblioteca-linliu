@@ -3,9 +3,6 @@ package com.twu.biblioteca.utils;
 import com.twu.biblioteca.model.Product;
 import com.twu.biblioteca.product.ProductInfo;
 
-import java.util.List;
-import java.util.Map;
-
 public class OutputUtils {
 
     public static void outputMessage(String message) {

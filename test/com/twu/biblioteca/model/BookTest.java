@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by linliu on 2/24/15.
@@ -25,30 +25,30 @@ public class BookTest {
     @Test
     public void bookShouldHaveName() {
         book.setName("HeadFirstJava");
-        assertNotNull(book.getName());
+        assertEquals("HeadFirstJava", book.getName());
     }
 
     @Test
     public void bookShouldHaveYearPublished() {
         book.setYearPublished("2033");
-        assertEquals(book.getYearPublished(), "2033");
+        assertEquals("2033", book.getYearPublished());
     }
 
     @Test
     public void bookShouldHaveStatus() {
         book.setStatus("checkout");
-        assertEquals(book.getStatus(), "checkout");
+        assertEquals("checkout", book.getStatus());
     }
 
     @Test
     public void returnedBookShouldHaveReturnStatus() {
         book.toReturn();
-        assertEquals(book.getStatus(), "returned");
+        assertEquals("returned", book.getStatus());
     }
 
     @Test
     public void bookShouldHaveAuthor() {
         book.setAuthor("Jim");
-        assertEquals(book.getAuthor(), "Jim");
+        assertEquals("Jim", book.getAuthor());
     }
 }

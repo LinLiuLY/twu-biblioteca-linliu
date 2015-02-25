@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by linliu on 2/24/15.
@@ -25,37 +24,37 @@ public class MovieTest {
 
     @Test
     public void movieShouldHaveName() {
-        movie.setName("HeadFirstJava");
-        assertNotNull(movie.getName());
+        movie.setName("Java");
+        assertEquals("Java", movie.getName());
     }
 
     @Test
     public void movieShouldHaveYearPublished() {
         movie.setYearPublished("2033");
-        assertEquals(movie.getYearPublished(), "2033");
+        assertEquals("2033", movie.getYearPublished());
     }
 
     @Test
     public void movieShouldHaveStatus() {
         movie.setStatus("checkout");
-        assertEquals(movie.getStatus(), "checkout");
+        assertEquals("checkout", movie.getStatus());
     }
 
     @Test
     public void returnedMovieShouldHaveReturnStatus() {
         movie.toReturn();
-        assertEquals(movie.getStatus(), "returned");
+        assertEquals("returned", movie.getStatus());
     }
 
     @Test
     public void movieShouldHaveAuthor() {
         movie.setAuthor("Jim");
-        assertEquals(movie.getAuthor(), "Jim");
+        assertEquals("Jim", movie.getAuthor());
     }
 
     @Test
     public void movieShouldHaveRating() {
         movie.setRating(3);
-        assertEquals(movie.getRating(), 3);
+        assertEquals(3, movie.getRating());
     }
 }
