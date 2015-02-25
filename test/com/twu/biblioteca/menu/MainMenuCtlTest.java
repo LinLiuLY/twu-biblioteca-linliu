@@ -1,5 +1,6 @@
 package com.twu.biblioteca.menu;
 
+import com.twu.biblioteca.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +28,7 @@ public class MainMenuCtlTest {
 
     @Test
     public void chooseOption_invalidParam() {
-        MainMenuCtl.chooseOption("e");
+        MainMenuCtl.chooseOption("e",new User());
         assertTrue("should print error message", outContent.toString().contains("valid option"));
     }
 }

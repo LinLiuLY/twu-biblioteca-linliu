@@ -1,6 +1,7 @@
 package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.constants.ConstantOutputMessage;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.product.UserInfo;
 import com.twu.biblioteca.utils.OutputUtils;
 
@@ -12,14 +13,15 @@ import java.util.Scanner;
 public class UserMenuCtl {
 
     public void userLoginMenu() {
-        if (new UserInfo().isUserAuthenticated(getUserName(), getPassword())) {
-            new MainMenuCtl().mainMenu();
-        } else {
+        User user = new UserInfo().isUserAuthenticated(getLibraryNumber(), getPassword());
+        if (user==null) {
             OutputUtils.outputMessage(ConstantOutputMessage.YOUR_ACCOUNT_IS_NOT_AUTHENTICATED);
+        } else {
+            new MainMenuCtl().mainMenu(user);
         }
     }
 
-    public String getUserName() {
+    public String getLibraryNumber() {
         OutputUtils.outputMessage(ConstantOutputMessage.ENTER_YOUR_LIBRARY_NUMBER);
         Scanner sc = new Scanner(System.in);
         String libraryNumber = sc.nextLine();

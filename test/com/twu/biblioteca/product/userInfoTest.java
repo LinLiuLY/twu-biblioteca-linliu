@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by linliu on 2/25/15.
@@ -20,8 +19,8 @@ public class UserInfoTest {
 
     @Test
     public void isUserAuthenticatedTest() {
-        assertTrue("user is authenticated", new UserInfo().isUserAuthenticated("123-1234", "111234"));
-        assertTrue("user is authenticated", new UserInfo().isUserAuthenticated("123-1234", "111234"));
+        assertNotNull("user is authenticated", new UserInfo().isUserAuthenticated("123-1234", "111234"));
+        assertNull("user is not authenticated", new UserInfo().isUserAuthenticated("123-1234", "1112034"));
     }
 
 }
