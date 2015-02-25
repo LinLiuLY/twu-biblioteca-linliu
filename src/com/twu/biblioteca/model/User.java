@@ -21,6 +21,10 @@ public class User {
         this.password = password;
     }
 
+    public void print() {
+        System.out.printf("%s %s %s\n", getName(), getEmail(), getPhone());
+    }
+
     public Object getName() {
         return name;
     }

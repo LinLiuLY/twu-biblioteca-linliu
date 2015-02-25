@@ -32,7 +32,7 @@ public class ProductInfoTest {
     }
 
     @Test
-    public void isProductAvailableToCheckout() {
+    public void isProductAvailableToCheckoutTest() {
         assertTrue("book is available", new ProductInfo().isProductAvailableToCheckout("book", "HeadFirstJava"));
         assertFalse("book is unavailable", new ProductInfo().isProductAvailableToCheckout("book", "CSS"));
         assertTrue("movie is available", new ProductInfo().isProductAvailableToCheckout("movie", "MovieTwo"));
