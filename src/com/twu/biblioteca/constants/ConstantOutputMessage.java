@@ -29,4 +29,8 @@ public class ConstantOutputMessage {
 
     public static final String SUCCESSFUL_RETURN = "Thank you for returning the book.";
     public static final String UNSUCCESSFUL_RETURN = "That is not a valid book to return.";
+
+    public static final String ENTER_YOUR_LIBRARY_NUMBER = "Enter your library number";
+    public static final String ENTER_YOUR_PASSWORD = "Enter your password";
+    public static final String YOUR_ACCOUNT_IS_NOT_AUTHENTICATED = "Your account is not authenticated";
 }
