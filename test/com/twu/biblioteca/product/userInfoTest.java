@@ -1,5 +1,6 @@
 package com.twu.biblioteca.product;
 
+import com.twu.biblioteca.info.UserInfo;
 import com.twu.biblioteca.model.User;
 import org.junit.Test;
 

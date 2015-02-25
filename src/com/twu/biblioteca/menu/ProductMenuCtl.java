@@ -2,7 +2,7 @@ package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.constants.ConstantOutputMessage;
 import com.twu.biblioteca.constants.ConstantProductProperty;
-import com.twu.biblioteca.product.ProductInfo;
+import com.twu.biblioteca.info.ProductInfo;
 import com.twu.biblioteca.utils.OutputUtils;
 
 import java.util.Scanner;

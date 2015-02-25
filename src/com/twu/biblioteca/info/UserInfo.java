@@ -1,4 +1,4 @@
-package com.twu.biblioteca.product;
+package com.twu.biblioteca.info;
 
 import com.twu.biblioteca.model.User;
 

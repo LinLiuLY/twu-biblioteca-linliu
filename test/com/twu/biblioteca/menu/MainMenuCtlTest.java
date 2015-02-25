@@ -28,7 +28,7 @@ public class MainMenuCtlTest {
 
     @Test
     public void chooseOption_invalidParam() {
-        MainMenuCtl.chooseOption("e",new User());
+        MainMenuCtl.chooseOption("e", new User());
         assertTrue("should print error message", outContent.toString().contains("valid option"));
     }
 }

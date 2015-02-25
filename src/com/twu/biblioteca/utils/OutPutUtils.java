@@ -1,7 +1,7 @@
 package com.twu.biblioteca.utils;
 
 import com.twu.biblioteca.model.Product;
-import com.twu.biblioteca.product.ProductInfo;
+import com.twu.biblioteca.info.ProductInfo;
 
 public class OutputUtils {
 
