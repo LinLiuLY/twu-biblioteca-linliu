@@ -25,8 +25,8 @@ public class ConstantOutputMessage {
 
     public static final String PLEASE_ENTER_BOOK_NAME = "Please enter the book name:";
 
-    public static final String SUCCESSFUL_CHECKOUT = "Thank you! Enjoy the book";
-    public static final String UNSUCCESSFUL_CHECKOUT = "That book is not available.";
+    public static final String SUCCESSFUL_CHECKOUT_BOOK = "Thank you! Enjoy the book";
+    public static final String UNSUCCESSFUL_CHECKOUT_BOOK = "That book is not available.";
 
     public static final String SUCCESSFUL_RETURN = "Thank you for returning the book.";
     public static final String UNSUCCESSFUL_RETURN = "That is not a valid book to return.";

@@ -1,8 +1,10 @@
 package com.twu.biblioteca.info;
 
+import com.twu.biblioteca.constants.ConstantOutputMessage;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.model.Product;
+import com.twu.biblioteca.utils.OutputUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,43 +33,32 @@ public class ProductInfo {
         allInfo.put("movie", movies);
     }
 
-    public List<String> getProductNames(String type) {
+    public void checkoutProduct(String type, String name) {
+        Product product = getProduct(type, name);
+
+        if (product != null) {
+            product.toCheckout();
+        }
+    }
+
+    public void returnProduct(String type, String name) {
+        Product product = getProduct(type, name);
+
+        if (product != null) {
+            product.toReturn();
+        } else {
+            OutputUtils.outputMessage(ConstantOutputMessage.UNSUCCESSFUL_RETURN);
+        }
+    }
+
+    private Product getProduct(String type, String name) {
         List<? extends Product> products = allInfo.get(type);
-        List<String> names = new ArrayList<String>();
         for (Product product : products) {
-            names.add(product.getName());
-        }
-
-        return names;
-    }
-
-    public boolean isProductCheckedOut(String productType, String productName) {
-        List<? extends Product> products = allInfo.get(productType);
-        for (Product product : products) {
-            if (product.getName().equals(productName)) {
-                if (product.getStatus().equals("returned")) {
-                    return false;
-                }
+            if (product.getName().equals(name)) {
+                return product;
             }
         }
 
-        return true;
-    }
-
-    public boolean isProductBelongsToLibrary(String productType, String productName) {
-        return getProductNames(productType).contains(productName);
-    }
-
-    public boolean isProductAvailableToCheckout(String productType, String productName) {
-        return isProductBelongsToLibrary(productType, productName) && (!isProductCheckedOut(productType, productName));
-    }
-
-    public void setProductStatus(String productType, String productName, String status) {
-        List<? extends Product> products = allInfo.get(productType);
-        for (Product product : products) {
-            if (product.getName().equals(productName)) {
-                product.setStatus(status);
-            }
-        }
+        return null;
     }
 }
