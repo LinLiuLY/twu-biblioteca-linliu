@@ -20,13 +20,14 @@ public class MovieMenu extends Menu {
     }
 
     @Override
-    void choose(String input) {
+    void choose(String option) {
         OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_MOVIE_NAME);
         Scanner sc = new Scanner(System.in);
         String in = sc.nextLine();
         while (!in.equalsIgnoreCase("exit")) {
-            new ProductInfo().checkoutProduct(ConstantProductProperty.MOVIE_TYPE, in);
-
+            if(option.equals("1")){
+                new ProductInfo().checkoutProduct(ConstantProductProperty.MOVIE_TYPE, in);
+            }
             in = sc.nextLine();
         }
     }

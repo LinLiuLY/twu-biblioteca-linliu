@@ -21,8 +21,8 @@ public class BookMenu extends Menu {
     }
 
     @Override
-    void choose(String input) {
-        getInputBookName(input);
+    void choose(String option) {
+        getInputBookName(option);
     }
 
     public void getInputBookName(String option) {
