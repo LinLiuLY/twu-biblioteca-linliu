@@ -26,9 +26,22 @@ public class OutputUtilsTest {
     }
 
     @Test
-    public void outputMessageTest() {
+    public void shouldOutputMessage() {
         OutputUtils.outputMessage("welcome");
-        assertTrue("should print welcome", outContent.toString().contains("welcome"));
+        assertTrue(outContent.toString().contains("welcome"));
     }
 
+    @Test
+    public void shouldOutputBookInfo(){
+        OutputUtils.outputProductInfo("book");
+        assertTrue(outContent.toString().contains("HeadFirstJava"));
+        assertTrue(outContent.toString().contains("HeadFirstJavaScript"));
+    }
+
+    @Test
+    public void shouldOutputMovieInfo(){
+        OutputUtils.outputProductInfo("movie");
+        assertTrue(outContent.toString().contains("MovieOne"));
+        assertTrue(outContent.toString().contains("MovieTwo"));
+    }
 }

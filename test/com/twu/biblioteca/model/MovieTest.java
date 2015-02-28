@@ -11,15 +11,18 @@ import static org.junit.Assert.assertEquals;
  */
 public class MovieTest {
     Movie movie;
+    Movie movie2;
 
     @Before
     public void setup() {
         movie = new Movie();
+        movie2 = new Movie("MovieTwo", "returned", "Red", "2010", 3);
     }
 
     @After
     public void tearDown() {
         movie = null;
+        movie2 = null;
     }
 
     @Test
@@ -56,5 +59,11 @@ public class MovieTest {
     public void movieShouldHaveRating() {
         movie.setRating(3);
         assertEquals(3, movie.getRating());
+    }
+
+    @Test
+    public void movieShouldCheckout(){
+        movie2.toCheckout();
+        assertEquals("checkout",movie2.getStatus());
     }
 }

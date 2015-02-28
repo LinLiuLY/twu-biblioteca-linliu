@@ -50,7 +50,5 @@ public class UserTest {
     public void userShouldHavePassword() {
         user.setPassword("123");
         assertEquals("123", user.getPassword());
-
-
     }
 }

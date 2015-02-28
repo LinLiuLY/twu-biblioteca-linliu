@@ -25,7 +25,7 @@ public class User {
         System.out.printf("%s %s %s\n", getName(), getEmail(), getPhone());
     }
 
-    public Object getName() {
+    public String getName() {
         return name;
     }
 
