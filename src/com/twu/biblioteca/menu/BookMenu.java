@@ -31,7 +31,7 @@ public class BookMenu extends Menu {
         String bookName = sc.nextLine();
         while (!bookName.equalsIgnoreCase("exit")) {
             if (option.equals("1")) {
-                new ProductInfo().checkoutProduct(ConstantProductProperty.BOOK_TYPE, bookName);
+                ProductInfo.checkoutProduct(ConstantProductProperty.BOOK_TYPE, bookName);
             } else {
                 returnBook(bookName);
             }
@@ -40,6 +40,6 @@ public class BookMenu extends Menu {
     }
 
     public void returnBook(String bookName) {
-        new ProductInfo().returnProduct(ConstantProductProperty.BOOK_TYPE, bookName);
+        ProductInfo.returnProduct(ConstantProductProperty.BOOK_TYPE, bookName);
     }
 }

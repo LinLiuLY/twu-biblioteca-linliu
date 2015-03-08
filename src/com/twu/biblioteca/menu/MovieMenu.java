@@ -26,7 +26,7 @@ public class MovieMenu extends Menu {
         String in = sc.nextLine();
         while (!in.equalsIgnoreCase("exit")) {
             if(option.equals("1")){
-                new ProductInfo().checkoutProduct(ConstantProductProperty.MOVIE_TYPE, in);
+                ProductInfo.checkoutProduct(ConstantProductProperty.MOVIE_TYPE, in);
             }
             in = sc.nextLine();
         }

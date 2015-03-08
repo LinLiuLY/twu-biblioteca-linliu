@@ -33,7 +33,7 @@ public class ProductInfo {
         allInfo.put("movie", movies);
     }
 
-    public void checkoutProduct(String type, String name) {
+    public static void checkoutProduct(String type, String name) {
         Product product = getProduct(type, name);
 
         if (product != null) {
@@ -41,7 +41,7 @@ public class ProductInfo {
         }
     }
 
-    public void returnProduct(String type, String name) {
+    public static void returnProduct(String type, String name) {
         Product product = getProduct(type, name);
 
         if (product != null) {
@@ -51,7 +51,7 @@ public class ProductInfo {
         }
     }
 
-    private Product getProduct(String type, String name) {
+    private static Product getProduct(String type, String name) {
         List<? extends Product> products = allInfo.get(type);
         for (Product product : products) {
             if (product.getName().equals(name)) {
