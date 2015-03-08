@@ -20,7 +20,7 @@ public class UserInfo {
     }
 
 
-    public User isUserAuthenticated(String libraryNumber, String password) {
+    public static User isUserAuthenticated(String libraryNumber, String password) {
         for (User user : userInfo) {
             if ((user.getLibraryNumber().equals(libraryNumber)) && (user.getPassword().equals(password))) {
                 return user;

@@ -14,7 +14,7 @@ public class UserMenu {
     private User user;
 
     public void process() {
-        user = new UserInfo().isUserAuthenticated(getLibraryNumber(), getPassword());
+        user = UserInfo.isUserAuthenticated(getLibraryNumber(), getPassword());
 
         if (user == null) {
             OutputUtils.outputMessage(ConstantOutputMessage.YOUR_ACCOUNT_IS_NOT_AUTHENTICATED);
