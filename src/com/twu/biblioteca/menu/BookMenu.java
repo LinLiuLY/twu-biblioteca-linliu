@@ -22,24 +22,28 @@ public class BookMenu extends Menu {
 
     @Override
     void choose(String option) {
-        getInputBookName(option);
+        if (option.equals("1")) {
+            checkoutBook();
+        } else {
+            returnBook();
+        }
     }
 
-    public void getInputBookName(String option) {
+    public void returnBook() {
         OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
         Scanner sc = new Scanner(System.in);
         String bookName = sc.nextLine();
         while (!bookName.equalsIgnoreCase("exit")) {
-            if (option.equals("1")) {
-                ProductInfo.checkoutProduct(ConstantProductProperty.BOOK_TYPE, bookName);
-            } else {
-                returnBook(bookName);
-            }
-            bookName = sc.nextLine();
+            ProductInfo.returnProduct(ConstantProductProperty.BOOK_TYPE, bookName);
         }
     }
 
-    public void returnBook(String bookName) {
-        ProductInfo.returnProduct(ConstantProductProperty.BOOK_TYPE, bookName);
+    public void checkoutBook() {
+        OutputUtils.outputMessage(ConstantOutputMessage.PLEASE_ENTER_BOOK_NAME);
+        Scanner sc = new Scanner(System.in);
+        String bookName = sc.nextLine();
+        while (!bookName.equalsIgnoreCase("exit")) {
+            ProductInfo.checkoutProduct(ConstantProductProperty.BOOK_TYPE, bookName);
+        }
     }
 }
